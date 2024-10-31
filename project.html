@@ -2,9 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>  
+    <title>Title</title> 
+    <style>
+        .container { 
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;   
+            gap: 24px;
+        }
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type=submit] {
+            width: 100%;
+            height: 30px;
+            background-color: darksalmon;
+        }
+        input[type=submit]:hover {
+            background-color:chocolate;
+            cursor: pointer;
+        }
+        .input-error{
+            border-color:brown;
+        }
+    </style> 
 </head>
 <body>
+ <div class="container">
+ <h1>registration form</h1>   
+    <form> 
+        <div class="form-input" id="name-input-container">
+            <label for="name-input">type your name</label>
+            <input id="name-input" type="text" placeholder="name"|>
+        </div>
+        <div class="form-input">
+            <label for="password-input">enter your password</label>
+            <input id="password-input" type="password" placeholder="password"|>
+        </div>
+    </form>
     
+    <button id="submit-input">submit</button>
+       
+</div> 
+<script type="text/javascript">
+        const nameInput = document.querySelector("#name-input");
+        
+        let inputValue;
+
+        nameInput.addEventListener("input", ()=> {
+            inputValue = nameInput.value
+            console.log(inputValue)
+        })
+        nameInput.addEventListener("blur", ()=> {
+            if (!inputValue || inputValue.lenght < 4) {
+                nameInput.className = "input-error"
+                const p = document.createElement("p")
+                document.querySelector("#name-input-container").append("Name field is required", p);
+        
+            }
+        })
+       
+        
+
+ </script>
 </body>
-</html>    
+</html>  
