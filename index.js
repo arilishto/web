@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require("path")
 const app = express()
 const port = 3000
 
@@ -7,7 +8,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/registration', (req, res) => {
-  res.sendFile("index.html")
+  res.sendFile("project.html", {root: path.join(__dirname)})
 })
 
 app.get('/ola', (req, res) => {
