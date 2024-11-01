@@ -6,14 +6,12 @@ const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) => {
-  res.send('hi!')
-})
-
-app.get('*', (req, res) => {
-  res.sendFile("project.html", {root: path.join(__dirname, 'public')})
-})
+  res.sendFile(path.join(__dirname, 'project.html'));
+});
 
 app.post('/reg-data', (req, res) => {
   console.log(">>>>>>>>>>>>>", req.body)
