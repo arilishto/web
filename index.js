@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile("project.html", {root: path.join(__dirname)})
+  res.sendFile("project.html", {root: path.join(__dirname, 'public')})
 })
 
 app.post('/reg-data', (req, res) => {
