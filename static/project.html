@@ -25,12 +25,18 @@
             align-items: center;
             justify-content: center;
         }
-        input[type=submit] {
-            width: 100%;
+        
+        button[type="submit"] {
+            width: 90px;
             height: 30px;
             background-color: darksalmon;
         }
-        input[type=submit]:hover {
+        button[type="submit"] {
+            width: 90px;
+            height: 30px;
+            background-color: darksalmon;
+        }
+        button[type="submit"]:hover {
             background-color:chocolate;
             cursor: pointer;
         }
@@ -42,18 +48,18 @@
 <body>
  <div class="container">
  <h1>registration form</h1>   
-    <form> 
+    <form action="/reg-data" method="post"> 
         <div class="form-input" id="name-input-container">
             <label for="name-input">type your name</label>
-            <input id="name-input" type="text" placeholder="name"|>
+            <input id="name-input" type="text" placeholder="name" name="username">
         </div>
         <div class="form-input">
             <label for="password-input">enter your password</label>
-            <input id="password-input" type="password" placeholder="password"|>
+            <input id="password-input" type="password" placeholder="password" name="password">
         </div>
+        <button type="submit" name="submit" value="bar">submit</button>
     </form>
     
-    <button id="submit-input">submit</button>
        
 </div> 
 <script type="text/javascript">
